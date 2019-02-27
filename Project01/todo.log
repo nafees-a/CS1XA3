@@ -1,0 +1,2 @@
+/home/nafeesa/CS1XA3/Project01/project_analyze.sh:20:   #TODO see if this works
+/home/nafeesa/CS1XA3/Project01/project_analyze.sh:21:   grep -n -r --exclude="todo.log" "#TODO" ~/CS1XA3 > todo.log
