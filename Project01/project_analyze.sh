@@ -18,5 +18,5 @@ fi
 
 if [ $input -eq 2 ]; then
    #TODO see if this works
-   grep -r --exclude="todo.log" "#TODO" ~/CS1XA3 > todo.log
+   grep -n -r --exclude="todo.log" "#TODO" ~/CS1XA3 > todo.log
 fi
