@@ -1,4 +1,4 @@
-echo Enter 1 for File Type Count
+echo Enter 1 for File Type Count, Enter 2 for TODO Log
 read input
 
 if [ $input -eq 1 ]; then
@@ -14,4 +14,9 @@ if [ $input -eq 1 ]; then
     find ~/CS1XA3 -name "*.hs" -type f | wc -l
     echo -n Bash Script:
     find ~/CS1XA3 -name "*.sh" -type f | wc -l
+fi
+
+if [ $input -eq 2 ]; then
+   #TODO see if this works
+   grep -r --exclude="todo.log" "#TODO" ~/CS1XA3 > todo.log
 fi
