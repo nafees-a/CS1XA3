@@ -38,7 +38,7 @@ init flags url key =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model = 
   case msg of
-        Tick time keystate -> if model.size + 0.30 > 15 then ( { model | targets = model.targets + 1, size = 0 }, createX ) -- if the size plus 0.30 is greater than 15, then set size to 0 and add one to target counter
+        Tick time keystate -> if model.size > 15 then ( { model | targets = model.targets + 1, size = 0 }, createX ) -- if the size is greater than 15, then set size to 0 and add one to target counter
                               else ( { model | size = model.size + 0.30 }, Cmd.none ) -- add 0.30 to the size of the target
             
         MakeRequest req    -> ( model , Cmd.none )
@@ -72,12 +72,12 @@ view model =
         circleScore = group [background, target, accuracyspot, targetsspot, hitspot, shotsspot, aimtrainer]
 
         background = rect 500 500
-                        |> filled white
-                        |> notifyTap MissedShot
+                      |> filled white
+                      |> notifyMouseDown MissedShot
 
         target = circle model.size
                       |> filled green
-                      |> notifyTap TargetShot
+                      |> notifyMouseDown TargetShot
                       |> move (model.x,model.y) 
 
         accuracyspot = text ("Accuracy: " ++ String.fromFloat model.accuracy)
