@@ -121,6 +121,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = 'e/nafeesa/static/'
+STATIC_URL = '/e/nafeesa/static/'
 STATICFILES_DIRS = [ "/home/nafeesa/CS1XA3/public_html/", ]
 STATIC_ROOT = "/home/nafeesa/CS1XA3/django_project/static/"
